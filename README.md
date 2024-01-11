@@ -24,8 +24,8 @@ The project provides user authentication and CRUD operations for managing employ
 
   .Run the project on your local server.
   ## Usage  
-  -Access the login page using /login and enter your credentials./n
-  -After successful login, supervisors can manage employees by navigating to /list./n
-  -Employees can access their information through their respective portal.
+  -Access the login page using /login and enter your credentials.<br>
+  -After successful login, supervisors can manage employees by navigating to /list.<br>
+  -Employees can access their information through their respective portal.<br>
   
    
