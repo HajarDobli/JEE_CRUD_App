@@ -18,14 +18,14 @@ The project provides user authentication and CRUD operations for managing employ
 
   ## Getting Started
   
-  1. Clone the repository
+  .Clone the repository
      
-  2.Set up your databases for supervisors and employees, and update the database configurations in the code.
+  .Set up your databases for supervisors and employees, and update the database configurations in the code.
 
-  3.Run the project on your local server.
+  .Run the project on your local server.
   ## Usage  
-  -Access the login page using /login and enter your credentials.
-  -After successful login, supervisors can manage employees by navigating to /list.
+  -Access the login page using /login and enter your credentials./n
+  -After successful login, supervisors can manage employees by navigating to /list./n
   -Employees can access their information through their respective portal.
   
    
