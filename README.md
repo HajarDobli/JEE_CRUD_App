@@ -17,6 +17,7 @@ The project provides user authentication and CRUD operations for managing employ
 - MySQL
 
   ## Getting Started
+  
   1. Clone the repository
      
   2.Set up your databases for supervisors and employees, and update the database configurations in the code.
