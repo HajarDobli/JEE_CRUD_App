@@ -113,30 +113,39 @@ public class our_employeesServlet extends HttpServlet {
 
     private void updateEmployee(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ParseException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        // Parse date parameter
-        String dobString = request.getParameter("dateOfBirth");
-        Date dateOfBirth = new SimpleDateFormat("yyyy-MM-dd").parse(dobString);
-        String gender = request.getParameter("gender");
-        String address = request.getParameter("address");
-        String contactNumber = request.getParameter("contactNumber");
-        String email = request.getParameter("email");
-        String jobTitle = request.getParameter("jobTitle");
-        String department = request.getParameter("department");
-        // Parse date parameter
-        String dojString = request.getParameter("dateOfJoining");
-        Date dateOfJoining = new SimpleDateFormat("yyyy-MM-dd").parse(dojString);
-        double salary = Double.parseDouble(request.getParameter("salary"));
-        String status = request.getParameter("status");
+        try {
+            String employeeIdString = request.getParameter("employeeId");
+            if (employeeIdString != null && !employeeIdString.isEmpty()) {
+                int employeeId = Integer.parseInt(employeeIdString);
+                String firstName = request.getParameter("firstName");
+                String lastName = request.getParameter("lastName");
+                String dobString = request.getParameter("dateOfBirth");
+                Date dateOfBirth = new SimpleDateFormat("yyyy-MM-dd").parse(dobString);
+                String gender = request.getParameter("gender");
+                String address = request.getParameter("address");
+                String contactNumber = request.getParameter("contactNumber");
+                String email = request.getParameter("email");
+                String jobTitle = request.getParameter("jobTitle");
+                String department = request.getParameter("department");
+                String dojString = request.getParameter("dateOfJoining");
+                Date dateOfJoining = new SimpleDateFormat("yyyy-MM-dd").parse(dojString);
+                double salary = Double.parseDouble(request.getParameter("salary"));
+                String status = request.getParameter("status");
 
-        our_employees updatedEmployee = new our_employees(id, firstName, lastName, dateOfBirth, gender, address, contactNumber,
-                email, jobTitle, department, dateOfJoining, salary, status);
-        employeeDAO.updateEmployee(updatedEmployee);
+                our_employees updatedEmployee = new our_employees(employeeId, firstName, lastName, dateOfBirth, gender, address, contactNumber,
+                        email, jobTitle, department, dateOfJoining, salary, status);
+                boolean rowUpdated = employeeDAO.updateEmployee(updatedEmployee);
 
-        response.sendRedirect("list");
+                response.sendRedirect("list");
+            } else {
+                System.out.println("Employee ID is null or empty. Cannot update.");
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            System.out.println("Invalid employee ID provided.");
+        }
     }
+
 
     private void deleteEmployee(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {

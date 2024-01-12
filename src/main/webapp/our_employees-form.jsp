@@ -58,90 +58,90 @@
     <div class="container col-md-5">
         <div class="card">
             <div class="card-body">
-                <c:if test="${our_employees != null}">
+                <c:if test="${employee != null}">
                     <form action="update" method="post">
                 </c:if>
-                <c:if test="${our_employees == null}">
+                <c:if test="${employee == null}">
                     <form action="insert" method="post">
                 </c:if>
 
                 <caption>
                     <h2>
-                        <c:if test="${our_employees != null}">
+                        <c:if test="${employee != null}">
                             Edit Employee
                         </c:if>
-                        <c:if test="${our_employees == null}">
+                        <c:if test="${employee == null}">
                             Add New Employee
                         </c:if>
                     </h2>
                 </caption>
 
-                <c:if test="${our_employees != null}">
-                    <input type="hidden" name="employeeId" value="<c:out value='${our_employees.employeeId}' />" />
+                <c:if test="${employee != null}">
+                    <input type="hidden" name="employeeId" value="<c:out value='${employee.employeeId}' />" />
                 </c:if>
 
                 <fieldset class="form-group">
-                    <label>First Name</label> <input type="text" value="<c:out value='${our_employees.firstName}' />"
+                    <label>First Name</label> <input type="text" value="<c:out value='${employee.firstName}' />"
                         class="form-control" name="firstName" required="required">
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label>Last Name</label> <input type="text" value="<c:out value='${our_employees.lastName}' />"
+                    <label>Last Name</label> <input type="text" value="<c:out value='${employee.lastName}' />"
                         class="form-control" name="lastName" required="required">
                 </fieldset>
 				<fieldset class="form-group">
 				    <label>Date of Birth</label>
 				    <input type="date" class="form-control" name="dateOfBirth"
-				        value="<c:if test='${our_employees != null}'><c:out value='${our_employees.dateOfBirth}' /></c:if>"
+				        value="<c:if test='${employee != null}'><c:out value='${employee.dateOfBirth}' /></c:if>"
 				        required="required">
 				</fieldset>						
 
 				<fieldset class="form-group">
-				    <label>Gender</label> <input type="text" value="<c:out value='${our_employees.gender}' />"
+				    <label>Gender</label> <input type="text" value="<c:out value='${employee.gender}' />"
 				        class="form-control" name="gender">
 				</fieldset>
 				
 				<fieldset class="form-group">
-				    <label>Address</label> <input type="text" value="<c:out value='${our_employees.address}' />"
+				    <label>Address</label> <input type="text" value="<c:out value='${employee.address}' />"
 				        class="form-control" name="address">
 				</fieldset>
 				
 				<fieldset class="form-group">
-				    <label>Contact Number</label> <input type="text" value="<c:out value='${our_employees.contactNumber}' />"
+				    <label>Contact Number</label> <input type="text" value="<c:out value='${employee.contactNumber}' />"
 				        class="form-control" name="contactNumber">
 				</fieldset>
 				
 				<fieldset class="form-group">
-				    <label>Email</label> <input type="text" value="<c:out value='${our_employees.email}' />"
+				    <label>Email</label> <input type="text" value="<c:out value='${employee.email}' />"
 				        class="form-control" name="email">
 				</fieldset>
 				
 				<fieldset class="form-group">
-				    <label>Job Title</label> <input type="text" value="<c:out value='${our_employees.jobTitle}' />"
+				    <label>Job Title</label> <input type="text" value="<c:out value='${employee.jobTitle}' />"
 				        class="form-control" name="jobTitle">
 				</fieldset>
 				
 				<fieldset class="form-group">
-				    <label>Department</label> <input type="text" value="<c:out value='${our_employees.department}' />"
+				    <label>Department</label> <input type="text" value="<c:out value='${employee.department}' />"
 				        class="form-control" name="department">
 				</fieldset>
 				
 				<fieldset class="form-group">
 				    <label>Date of Joining</label>
 				    <input type="date" class="form-control" name="dateOfJoining"
-				        value="<c:if test='${our_employees != null}'><c:out value='${our_employees.dateOfJoining}' /></c:if>"
+				        value="<c:if test='${employee != null}'><c:out value='${employee.dateOfJoining}' /></c:if>"
 				        required="required">
 				</fieldset>
 				
 				<fieldset class="form-group">
-				    <label>Salary</label> <input type="text" value="<c:out value='${our_employees.salary}' />"
+				    <label>Salary</label> <input type="text" value="<c:out value='${employee.salary}' />"
 				        class="form-control" name="salary">
 				</fieldset>
 				
 
 				
 				<fieldset class="form-group">
-				    <label>Status</label> <input type="text" value="<c:out value='${our_employees.status}' />"
+				    <label>Status</label> <input type="text" value="<c:out value='${employee.status}' />"
 				        class="form-control" name="status">
 				</fieldset>
 
